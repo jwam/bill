@@ -45,10 +45,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">ダッシュボード</a></li>
-            <li><a href="#">設定</a></li>
-            <li><a href="#">プロフィール</a></li>
-            <li><a href="#">ヘルプ</a></li>
+            <li><a href="./home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ダッシュボード</a></li>
+            <li><a href="./setting.html"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 設定</a></li>
+            <li><a href="./profile.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> プロフィール</a></li>
+            <li><a href="./help.html"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> ヘルプ</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -60,58 +60,68 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
+          <a href="./register.html" class="btn btn-primary btn-block">新規作成</a>
           <ul class="nav nav-sidebar">
-            <li><a href="./home.html">ホーム</a></li>
-            <li><a href="./created.html">作成済み</a></li>
-            <li><a href="./billed.html">請求済み</a></li>
-            <li><a href="./search.html">請求書検索</a></li>
+            <li><a href="./home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ホーム</a></li>
+            <li><a href="./created.html"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 作成済み</a></li>
+            <li><a href="./billed.html"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 請求済み</a></li>
+            <li><a href="./search.html"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> 請求書検索</a></li>
+            <li><a href="./export.html"><span class="glyphicon glyphicon-export" aria-hidden="true"></span> 請求書一覧の出力</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="">請求書の新規作成 <span class="sr-only">(current)</span></a></li>
-            <li><a href="">請求書一覧の印刷</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">請求先のメンテナンス</a></li>
-            <li><a href="">請求書テンプレートの編集</a></li>
+            <li><a href="./maintenance.html"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> メンテナンス</a></li>
+            <li><a href="./template.html"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> テンプレートの編集</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">請求書の新規作成</h2>
-          <form role="form">
+          <form role="form" class="form-horizontal">
           <div class="form-group">
-              <label for="subject" class="col-sm-2 col-md-2">請求日</label>
-              <div class="col-sm-10 col-md-10">
+              <label for="subject" class="col-sm-2 col-md-2 text-right control-label">請求日</label>
+              <div class="col-sm-8 col-md-8">
                 <input type="text" class="form-control bill-yyyymmdd datepicker" id="subject" placeholder="日付を入力してください。">
               </div>
+              <div class="col-sm-c col-md-2">
+              </div>
           </div>
           <div class="form-group">
-              <label for="subject" class="col-sm-2 col-md-2">請求番号</label>
-              <div class="col-sm-10 col-md-10">
+              <label for="subject" class="col-sm-2 col-md-2 text-right control-label">請求番号</label>
+              <div class="col-sm-8 col-md-8">
                 <input type="text" class="form-control" id="subject" placeholder="請求番号を入力してください。">
               </div>
+              <div class="col-sm-c col-md-2">
+              </div>
           </div>
           <div class="form-group">
-              <label for="subject" class="col-sm-2 col-md-2">請求先</label>
-              <div class="col-sm-10 col-md-10">
+              <label for="subject" class="col-sm-2 col-md-2 text-right control-label">請求先</label>
+              <div class="col-sm-8 col-md-8">
                 <input type="text" class="form-control" id="subject" placeholder="請求先を入力してください。">
               </div>
+              <div class="col-sm-c col-md-2">
+              </div>
           </div>
           <div class="form-group">
-              <label for="subject" class="col-sm-2 col-md-2">件名</label>
-              <div class="col-sm-10 col-md-10">
+              <label for="subject" class="col-sm-2 col-md-2 text-right control-label">件名</label>
+              <div class="col-sm-8 col-md-8">
                 <input type="text" class="form-control" id="subject" placeholder="件名を入力してください。">
               </div>
-          </div>
-          <div class="form-group">
-              <label for="subject" class="col-sm-2 col-md-2">品名</label>
-              <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="subject" placeholder="品名を入力してください。">
+              <div class="col-sm-c col-md-2">
               </div>
           </div>
           <div class="form-group">
-              <label for="subject" class="col-sm-2 col-md-2">請求金額</label>
-              <div class="col-sm-10 col-md-10">
+              <label for="subject" class="col-sm-2 col-md-2 text-right control-label">品名</label>
+              <div class="col-sm-8 col-md-8">
+                <input type="text" class="form-control" id="subject" placeholder="品名を入力してください。">
+              </div>
+              <div class="col-sm-c col-md-2">
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="subject" class="col-sm-2 col-md-2 text-right control-label">請求金額</label>
+              <div class="col-sm-8 col-md-8">
                 <input type="text" class="form-control" id="subject" placeholder="請求金額を入力してください。">
+              </div>
+              <div class="col-sm-c col-md-2">
               </div>
           </div>
           <div class="form-group">
