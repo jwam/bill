@@ -144,3 +144,7 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+#records tbody tr {
+  cursor: pointer;
+}

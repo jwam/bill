@@ -80,13 +80,11 @@
           <form role="form" class="form-horizontal">
             <div class="panel panel-default">
               <div class="panel-body">
-                <div class="form-group">
+                <div class="form-group form-inline">
                   <label for="subject" class="col-sm-2 col-md-2 control-label">日付</label>
-                  <div class="col-sm-2 col-md-2">
+                  <div class="col-sm-10 col-md-10">
                     <input type="text" class="form-control bill-yyyymmdd datepicker" id="subject" placeholder="日付から">
-                  </div>
-                  <label for="subject" class="col-sm-1 col-md-1 control-label">～</label>
-                  <div class="col-sm-6 col-md-6">
+                    <label for="subject" class="control-label">～</label>
                     <input type="text" class="form-control bill-yyyymmdd datepicker" id="subject" placeholder="日付まで">
                   </div>
                 </div>
@@ -117,7 +115,7 @@
   	        </div>
           </form>
           <div class="table-responsive">
-            <table class="table table-striped table-hover ">
+            <table class="table table-striped table-hover" id="records">
               <thead>
                 <tr>
                   <th>日付</th>
@@ -128,56 +126,55 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr href="./confirm.html">
                   <td>2015/11/09</td>
                   <td>株式会社　○○○○○○</td>
                   <td>エコナビプロジェクト</td>
                   <td>開発一式</td>
                   <td>¥980,000</td>
                 </tr>
-                 <tr>
+                <tr href="./confirm.html">
                   <td>2015/11/09</td>
                   <td>株式会社　○○○○○○</td>
                   <td>エコナビプロジェクト</td>
                   <td>開発一式</td>
                   <td>¥980,000</td>
                 </tr>
-                <tr>
+                <tr href="./confirm.html">
                   <td>2015/11/09</td>
                   <td>株式会社　○○○○○○</td>
                   <td>エコナビプロジェクト</td>
                   <td>開発一式</td>
                   <td>¥980,000</td>
                 </tr>
-                <tr>
+                <tr href="./confirm.html">
                   <td>2015/11/09</td>
                   <td>株式会社　○○○○○○</td>
                   <td>エコナビプロジェクト</td>
                   <td>開発一式</td>
                   <td>¥980,000</td>
                 </tr>
-                <tr>
+                <tr href="./confirm.html">
                   <td>2015/11/09</td>
                   <td>株式会社　○○○○○○</td>
                   <td>エコナビプロジェクト</td>
                   <td>開発一式</td>
                   <td>¥980,000</td>
                 </tr>
-                <tr>
+                <tr href="./confirm.html">
                   <td>2015/11/09</td>
                   <td>株式会社　○○○○○○</td>
                   <td>エコナビプロジェクト</td>
                   <td>開発一式</td>
                   <td>¥980,000</td>
                 </tr>
-                <tr>
+                <tr href="./confirm.html">
                   <td>2015/11/09</td>
                   <td>株式会社　○○○○○○</td>
                   <td>エコナビプロジェクト</td>
                   <td>開発一式</td>
                   <td>¥980,000</td>
                 </tr>
-
               </tbody>
             </table>
           </div>
@@ -194,5 +191,18 @@
     <script src="../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../js/bootstrap-datepicker.js"></script>
+    <script src="../locales/bootstrap-datepicker.ja.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('#records').on( 'click', 'tbody tr', function () {
+          window.location.href = $(this).attr('href');
+        });
+        $('.datepicker').datepicker({
+          format: 'yyyy/mm/dd'
+          , language: 'ja'
+        });
+      });
+    </script>
   </body>
 </html>
