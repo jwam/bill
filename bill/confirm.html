@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="../images/favicon.ico">
 
     <title>ダッシュボード</title>
 
@@ -45,10 +45,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ダッシュボード</a></li>
-            <li><a href="./setting.html"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 設定</a></li>
-            <li><a href="./profile.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> プロフィール</a></li>
-            <li><a href="./help.html"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> ヘルプ</a></li>
+            <li><a href="../home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ダッシュボード</a></li>
+            <li><a href="../bill/home.html">請求書</a></li>
+            <li><a href="../estimate/home.html">見積書</a></li>
+            <li><a href="../order/home.html">注文書</a></li>
+            <li><a href="../receipt/home.html">領収書</a></li>
+            <li><a href="../setting.html"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 設定</a></li>
+            <li><a href="../profile.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> プロフィール</a></li>
+            <li><a href="../help.html"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> ヘルプ</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -65,10 +69,11 @@
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="./home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ホーム</a></li>
-            <li><a href="./created.html"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 作成済み</a></li>
-            <li><a href="./billed.html"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 請求済み</a></li>
+            <li><a href="./created.html"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 作成済み <span class="badge">13</span></a></li>
+            <li><a href="./send.html"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 請求済み <span class="badge">4</span></a></li>
             <li><a href="./search.html"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> 請求書検索</a></li>
             <li><a href="./export.html"><span class="glyphicon glyphicon-export" aria-hidden="true"></span> 請求書一覧の出力</a></li>
+            <li><a href="./draft.html"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 下書き <span class="badge">7</span></a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="./maintenance.html"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> メンテナンス</a></li>
@@ -110,22 +115,68 @@
               <div class="col-sm-c col-md-2">
               </div>
           </div>
-          <div class="form-group">
-              <label for="subject" class="col-sm-2 col-md-2 text-right control-label">品名</label>
-              <div class="col-sm-8 col-md-8">
-                <input type="text" class="form-control" id="subject" value="業務支援" disabled>
-              </div>
-              <div class="col-sm-c col-md-2">
-              </div>
-          </div>
-          <div class="form-group">
-              <label for="subject" class="col-sm-2 col-md-2 text-right control-label">請求金額</label>
-              <div class="col-sm-8 col-md-8">
-                <input type="text" class="form-control" id="subject" value="￥999,999" disabled>
-              </div>
-              <div class="col-sm-c col-md-2">
-              </div>
-          </div>
+          <table class="table table-bordered table-striped table-hover">
+            <thead>
+              <th></th>
+              <th>品名</th>
+              <th>数量</th>
+              <th>単価</th>
+              <th>金額</th>
+            </thead>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td>合計</td>
+                <td colspan="3" class="text-right">￥9999,999</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>消費税</td>
+                <td colspan="3" class="text-right">￥9999,999</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>合計（税込）</td>
+                <td colspan="3" class="text-right">￥9999,999</td>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td>
+                  1
+                </td>
+                <td>
+                  開発支援
+                </td>
+                <td class="text-right">
+                  1
+                </td>
+                <td class="text-right">
+                  ￥999,999
+                </td>
+                <td class="text-right">
+                  ￥999,999
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  2
+                </td>
+                <td>
+                  開発支援
+                </td>
+                <td class="text-right">
+                  1
+                </td>
+                <td class="text-right">
+                  ￥999,999
+                </td>
+                <td class="text-right">
+                  ￥999,999
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <div class="form-group">
             <button type="button" class="btn btn-danger">削除</button>
           </div>

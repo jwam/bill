@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="../images/favicon.ico">
 
     <title>メンテナンス</title>
 
@@ -19,7 +19,7 @@
     <link href="../css/home.css" rel="stylesheet">
     <link href="../css/input.css" rel="stylesheet">
     <link href="../css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="./bootstrap-select.css">
+    <link href="../css/bootstrap-select.css" rel="stylesheet" type="text/css">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../assets/js/ie-emulation-modes-warning.js"></script>
@@ -46,10 +46,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ダッシュボード</a></li>
-            <li><a href="./setting.html"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 設定</a></li>
-            <li><a href="./profile.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> プロフィール</a></li>
-            <li><a href="./help.html"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> ヘルプ</a></li>
+            <li><a href="../home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ダッシュボード</a></li>
+            <li><a href="../bill/home.html">請求書</a></li>
+            <li><a href="../estimate/home.html">見積書</a></li>
+            <li><a href="../order/home.html">注文書</a></li>
+            <li><a href="../receipt/home.html">領収書</a></li>
+            <li><a href="../setting.html"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 設定</a></li>
+            <li><a href="../profile.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> プロフィール</a></li>
+            <li><a href="../help.html"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> ヘルプ</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -66,10 +70,11 @@
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="./home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ホーム</a></li>
-            <li><a href="./created.html"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 作成済み</a></li>
-            <li><a href="./billed.html"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 請求済み</a></li>
+            <li><a href="./created.html"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 作成済み <span class="badge">13</span></a></li>
+            <li><a href="./send.html"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 請求済み <span class="badge">4</span></a></li>
             <li><a href="./search.html"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> 請求書検索</a></li>
             <li><a href="./export.html"><span class="glyphicon glyphicon-export" aria-hidden="true"></span> 請求書一覧の出力</a></li>
+            <li><a href="./draft.html"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 下書き <span class="badge">7</span></a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> メンテナンス <span class="sr-only">(current)</span></a></li>
@@ -89,10 +94,10 @@
           </div>
           <div class="form-group">
               <label for="subject" class="col-sm-2 col-md-2 text-right control-label">郵便番号</label>
-              <div class="col-sm-8 col-md-8">
-                <input type="text" class="form-control" id="subject" placeholder="郵便番号を入力してください。">
+              <div class="col-sm-5 col-md-5 form-inline">
+                <input type="text" class="form-control" id="subject" placeholder="999" maxlength="3"> - <input type="text" class="form-control" id="subject" placeholder="9999" maxlength="4">
               </div>
-              <div class="col-sm-c col-md-2">
+              <div class="col-sm-5 col-md-5">
               </div>
           </div>
           <div class="form-group">
@@ -194,7 +199,7 @@
           <div class="form-group">
               <label for="subject" class="col-sm-2 col-md-2 text-right control-label">電話番号</label>
               <div class="col-sm-8 col-md-8">
-                <input type="text" class="form-control" id="subject" placeholder="電話番号を入力してください。">
+                <input type="text" class="form-control" id="subject" placeholder="000-0000-0000">
               </div>
               <div class="col-sm-c col-md-2">
               </div>
@@ -209,11 +214,17 @@
           </div>
           <div class="form-group">
               <label for="subject" class="col-sm-2 col-md-2 text-right control-label">振込口座</label>
-              <div class="col-sm-8 col-md-8 form-inline">
+              <div class="col-sm-4 col-md-4 form-inline">
                 <input type="text" class="form-control" id="subject" placeholder="銀行名">
+                <input type="radio" value="1" name="gender" id="man">
+                <label for="man">普通</label>
+                <input type="radio" value="1" name="gender" id="man">
+                <label for="man">当座</label>
+              </div>
+              <div class="col-sm-4 col-md-4 text-left">
                 <input type="text" class="form-control" id="subject" placeholder="振込口座を入力してください。">
               </div>
-              <div class="col-sm-c col-md-2">
+              <div class="col-sm-2 col-md-2">
               </div>
           </div>
           <div class="form-group">
@@ -235,7 +246,7 @@
     <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="../js/bootstrap-datepicker.js"></script>
     <script src="../locales/bootstrap-datepicker.ja.min.js"></script>
-    <script src="./bootstrap-select.js"></script>
+    <script src="../js/bootstrap-select.js"></script>
     <script type="text/javascript">
     $(function() {
       $('.datepicker').datepicker({
